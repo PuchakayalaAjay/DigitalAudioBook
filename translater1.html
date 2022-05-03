@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!--link bootstrap-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body style='text-align:center;padding:190px;color:white;background-color:black'>
+
+<h1 style='text-align:center'>Language Translator </h1>
+
+
+
+<p>Select the language :</p>
+<!--below tag is for showing lst of languages-->
+
+<p><div id="google_translate_element"></div></p>
+<br/>
+<p>Enter text to translate  :</p>
+
+<textarea type='text' id='sam'></textarea>
+<p class id="hi"></p>
+<button onclick='get()' >Submit</button>
+<!--out put get from below tag-->
+<div id='content'></div>
+<!--type attribute specifies the type of text between tag-->>
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+<!--add a referance to the translate api at google.com-->>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+  //const b=document.querySelector('button');
+ //b.addEventListener('click',get);
+ function get(){
+ //const t=document.querySelector('input').value;
+ const t=document.querySelector('#sam').value;
+ //understand purose below statement
+ //let a=document.getElementById("hi").innerHTML="how are you";
+ const con=document.querySelector('#content');
+ // user enter text is add betweent the output tag for this purose we use innerHTML property
+ con.innerHTML=t;
+ }
+</script>
+</body>
+</html>
